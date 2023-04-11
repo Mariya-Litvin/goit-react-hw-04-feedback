@@ -13,16 +13,10 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  // const handleIncrement = stateName => {
-  //   this.setState(prevState => ({
-  //     [stateName]: prevState[stateName] + 1,
-  //   }));
-  // };
-
   const handleIncrement = stateName => {
-    if (stateName === 'good') setGood(good + 1);
-    if (stateName === 'neutral') setNeutral(neutral + 1);
-    if (stateName === 'bad') setBad(bad + 1);
+    if (stateName === 'good') setGood(prev => prev + 1);
+    if (stateName === 'neutral') setNeutral(prev => prev + 1);
+    if (stateName === 'bad') setBad(prev => prev + 1);
   };
 
   const countTotalFeedback = () => {
